@@ -1,0 +1,7 @@
+version: '3.3'
+
+services:
+  generate:
+    build: docker/go/.
+    volumes:
+      - .:/go/src/github.com/darma2/protobuf-golang

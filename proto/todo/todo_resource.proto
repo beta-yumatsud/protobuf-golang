@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package todo;
+option  go_package = "github.com/darma2/protobuf-golang/gen/go/todo;todo";
+
+import "google/protobuf/timestamp.proto";
+
+message Employee {
+  string id   = 1;
+  string name = 2;
+  enum Status {
+    STATUS_NONE     = 0;
+    STATUS_ACTIVE   = 1;
+    STATUS_INACTIVE = 2;
+  }
+  Status                    status     = 3;
+  google.protobuf.Timestamp created_at = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}
+
+message TODO {
+  string                    id         = 1;
+  string                    user_id    = 2;
+  string                    text       = 3;
+  bool                      done       = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+}
